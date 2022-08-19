@@ -28,7 +28,7 @@ call conda env create --name understandinggis --file understandinggis-win.yml >>
 
 @REM 4b. Add new version of the environment (only for if the above cannot be used for any reason)
 @REM https://docs.conda.io/projects/conda/en/latest/commands/install.html
-@REM call conda create --yes --name understandinggis
+@REM call conda create --yes --name understandinggis python=3
 @REM call conda activate understandinggis
 @REM call conda install --yes --channel conda-forge --force-reinstall geopandas rasterio pysal networkx osmnx pandana urbanaccess dill mapclassify spyder textdistance scikit-image matplotlib-scalebar flask sphinx >> understandinggis_install_no_yml.log
 
