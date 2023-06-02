@@ -1,6 +1,5 @@
-@REM before use, you must replace mxxxxxxx on line with your user name.
-@REM Step 1 (set the path) should always be completed (but only once in a cmd instance), after which you can comment / uncomment 
-@REM  for the desired combination of:
+@REM This file can:
+@REM    1. set the path (should always be included)
 @REM    2.  update conda
 @REM    3.  uninstall the understandinggis environment
 @REM    4a. install a new understandinggis environment using the yml environment file
@@ -9,10 +8,8 @@
 @REM    6.  export a new yml environment file
 
 
-@REM 1. Set the Path environment variable so that it can see the conda scripts
-@REM NOTE: Here you need to replace mxxxxxxx with your username, making sure not to leave any spaces either before or after it!
-set username=mxxxxxxx
-set PATH=C:\Users\%username%\AppData\Local\Continuum\anaconda3;C:\Users\%username%\AppData\Local\Continuum\anaconda3\Library\mingw-w64\bin;C:\Users\%username%\AppData\Local\Continuum\anaconda3\Library\usr\bin;C:\Users\%username%\AppData\Local\Continuum\anaconda3\Library\bin;C:\Users\mzdssjh8\AppData\Local\Continuum\anaconda3\Scripts;C:\Users\%username%\AppData\Local\Continuum\anaconda3\bin;C:\Users\%username%\AppData\Local\Continuum\anaconda3\condabin;%PATH%
+@REM 1. Set the Path environment variable so that it can see the conda scripts (do not comment out)
+set PATH=C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Library\mingw-w64\bin;C:\ProgramData\Anaconda3\Library\usr\bin;C:\ProgramData\Anaconda3\Library\bin;C:\ProgramData\Anaconda3\Scripts;C:\ProgramData\Anaconda3\bin;C:\ProgramData\Anaconda3\condabin;%PATH%
 
 @REM 2. Update Anaconda itself 
 @REM https://docs.conda.io/projects/conda/en/latest/commands/update.html
@@ -20,24 +17,20 @@ set PATH=C:\Users\%username%\AppData\Local\Continuum\anaconda3;C:\Users\%usernam
 
 @REM 3. Remove the old version of the environment
 @REM https://docs.conda.io/projects/conda/en/latest/commands/remove.html
-call conda remove --name understandinggis --all --yes
+@REM call conda remove --name understandinggis --all --yes
 
-@REM 4a. Add new version of the environment
+@REM 4a. Add new version of the environment using config file
 @REM https://docs.conda.io/projects/conda/en/latest/commands/create.html
-call conda env create --name understandinggis --file understandinggis-win.yml >> understandinggis_create_with_yml.log
+@REM call conda env create --name understandinggis --file understandinggis-win.yml
 
-@REM 4b. Add new version of the environment (only for if the above cannot be used for any reason)
+@REM 4b. Add new version of the environment without config file
 @REM https://docs.conda.io/projects/conda/en/latest/commands/install.html
-@REM call conda create --yes --name understandinggis python=3
-@REM call conda activate understandinggis
-@REM call conda install --yes --channel conda-forge --force-reinstall geopandas rasterio pysal networkx osmnx pandana urbanaccess dill mapclassify spyder textdistance scikit-image matplotlib-scalebar flask sphinx >> understandinggis_install_no_yml.log
+@REM call conda create --name understandinggis --channel conda-forge --override-channels --yes python=3 pyogrio pygeos geopandas rasterio pysal networkx osmnx pandana urbanaccess dill mapclassify spyder textdistance scikit-image matplotlib-scalebar flask openpyxl
 
 @REM 5. Update the libraries in an existing environment to the latest versions
 @REM https://docs.conda.io/projects/conda/en/latest/commands/update.html
-@REM call conda activate understandinggis
-@REM call conda update --all --yes --prune
+@REM call conda activate understandinggis && conda update --name understandinggis --channel conda-forge --override-channels --all --yes --prune && conda deactivate
 
 @REM 6. Export a new .yml environment file
 @REM https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#exporting-the-environment-yml-file
-@REM call conda activate understandinggis
-@REM call conda env export > understandinggis-win.yml
+@REM call conda activate understandinggis && conda env export > understandinggis.yml && conda deactivate
