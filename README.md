@@ -39,7 +39,7 @@ If this didn't work, the conda binaries must be stored in an unexpected location
 
 ```cmd
 conda activate understandinggis
-python mre/mre.py
+python mre.py
 ```
 
  If it works, a table of data should print the terminal. If not, then you should get an error (probably describing how the file will not load).
