@@ -4,7 +4,7 @@ This is how to update the `understandinggis` conda environment on a Windows mach
 
 Aside from this readme file, this repo also contains:
 - `conda_update.bat`: a Windows batch file that contains all of the necessary commands to create, remove and update the `undertandinggis` conda environment. 
-- `understandinggis-win.yml`: a YAML file describing the current version of the Anaconda environment that the batch file should install (last updated 02/06/2023)
+- `understandinggis-win.yml`: a YAML file describing the current version of the Anaconda environment that the batch file should install (last updated 2024/08/21)
 - `mre.py`: a Python script that provides a simple test for the installation (imports the libraries and then uses one of them to load a file).
 
 ## How to use `conda_update.bat` 
@@ -20,7 +20,7 @@ This repository also contains `conda_update.bat`, which was created for automate
 The desired processes for a given application can be included and the rest omitted simply by commenting / uncommenting the relevant sections (with `@REM`).
 
 To use this script, you need to:
-1. Load the files from this gist onto your machine, either via [direct download](https://gist.github.com/jonnyhuck/e8bbf299b08a7a5db4681df5e15b7309/archive/5f79202a116672515fc56fec2caa04f041ab60fc.zip), or using git with: `git clone git@gist.github.com:e8bbf299b08a7a5db4681df5e15b7309.git`
+1. Load the files from this gist onto your machine, either via [direct download](https://github.com/jonnyhuck/ugis-install/archive/refs/heads/main.zip), or using git with: `git clone git@github.com:jonnyhuck/ugis-install.git`
 1. Open up the `conda_update.bat` file in Notepad or another text editor and select which parts you would like to run by commenting / uncommenting them accordingly (`@REM`)
 1. Run the file by simply pasting the below into cmd.exe and pressing Enter:
 ```cmd
