@@ -2,6 +2,6 @@
 import rasterio,  pysal, networkx, osmnx, skimage, matplotlib_scalebar, flask
 
 # test one by actually opening a shapefile
-from geopandas import read_file
-gdf = read_file('./mre/data/ne_10m_admin_0_countries.shp')
+import geopandas as gpd
+gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
 print(gdf.head())

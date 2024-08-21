@@ -5,7 +5,7 @@ This is how to update the `understandinggis` conda environment on a Windows mach
 Aside from this readme file, this repo also contains:
 - `conda_update.bat`: a Windows batch file that contains all of the necessary commands to create, remove and update the `undertandinggis` conda environment. 
 - `understandinggis-win.yml`: a YAML file describing the current version of the Anaconda environment that the batch file should install (last updated 02/06/2023)
-- `mre/mre.py`: a Python script that provides a simple test for the installation (imports the libraries and then uses one of them to load a file).
+- `mre.py`: a Python script that provides a simple test for the installation (imports the libraries and then uses one of them to load a file).
 
 ## How to use `conda_update.bat` 
 
